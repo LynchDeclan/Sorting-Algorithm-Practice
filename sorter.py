@@ -36,7 +36,7 @@ def selection_sort(l):
 
 
 def insertion_sort(l):
-    # your code here
+    
     print(l)
 
 
