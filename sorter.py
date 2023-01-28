@@ -36,7 +36,9 @@ def selection_sort(l):
 
 
 def insertion_sort(l):
-    
+    if l[0] > l[1]:
+        l.insert(0, l[1])
+        del l[2]
     print(l)
 
 
