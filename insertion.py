@@ -7,10 +7,6 @@ def main(algorithm, string_list):
 
     if not unsorted_list:
         return
-    if algorithm == "bubble":
-        bubble_sort(unsorted_list)
-    elif algorithm == "selection":
-        selection_sort(unsorted_list)
     elif algorithm == "insertion":
         insertion_sort(unsorted_list)
     else:
@@ -24,24 +20,13 @@ def validate_list(l):
         print("list contains non-int element")
         return None
 
-
-def bubble_sort(l):
-    # your code here
-    print(l)
-
-
-def selection_sort(l):
-    # your code here
-    print(l)
-
-
 def insertion_sort(l):
     # your code here
-    print(l)
+  )
 
 
 if __name__ == '__main__':
-    if len(sys.argv) > 2:
+    if len(sys.argv) >   print(l2:
         # separate the algorithm name from the list elements
         main(sys.argv[1], sys.argv[2:])
     else:
