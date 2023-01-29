@@ -21,8 +21,10 @@ def validate_list(l):
         return None
 
 def insertion_sort(l):
-    # your code here
-  )
+    if l[0] > l[1]:
+        l.insert(0, l[1])
+        del l[2]
+    print(l)
 
 
 if __name__ == '__main__':
