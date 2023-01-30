@@ -11,8 +11,10 @@ def main(algorithm, string_list):
         bubble_sort(unsorted_list)
     elif algorithm == "selection":
         selection_sort(unsorted_list)
+        print(unsorted_list)
     elif algorithm == "insertion":
         insertion_sort(unsorted_list)
+        print(unsorted_list)
     else:
         print(f"can't sort using {algorithm}")
 
@@ -31,102 +33,28 @@ def bubble_sort(l):
 
 
 def selection_sort(l):
-    # your code here
-    print(l)
-
+    for first_elm in range(0, len(l)):
+        min_val = first_elm
+        for new_elm in range(min_val + 1, len(l)):
+            if l[min_val] > l[new_elm]:
+                min_val = new_elm
+            l[first_elm], l[min_val] = l[min_val], l[first_elm] 
+  
 
 def insertion_sort(l):
-    print(l)
-    if l[0] > l[1]:
-        l.insert(0, l[1])
-        del l[2]
-    else:
-        pass
-    print(l)
-    if l[1] > l[2]:
-        l.insert(1, l[2])
-        del l[3]
-    else:
-        pass
-    print(l)
-    if l[0] > l[1]:
-        l.insert(0, l[1])
-        del l[2]
-    else:
-        pass
-    print(l)
-    if l[2] > l[3]:
-        l.insert(2, l[3])
-        del l[4]
-    else:
-        pass
-    print(l)
-    if l[1] > l[2]:
-        l.insert(1, l[2])
-        del l[3]
-    else:
-        pass
-    print(l)
-    if l[0] > l[1]:
-        l.insert(0, l[1])
-        del l[2]
-    else:
-        pass
-    print(l)
-    if l[3] > l[4]:
-        l.insert(3, l[4])
-        del l[5]
-    else:
-        pass
-    print(l)
-    if l[2] > l[3]:
-        l.insert(2, l[3])
-        del l[4]
-    else:
-        pass
-    print(l)
-    if l[1] > l[2]:
-        l.insert(1, l[2])
-        del l[3]
-    else:
-        pass
-    print(l)
-    if l[0] > l[1]:
-        l.insert(0, l[1])
-        del l[2]
-    else:
-        pass
-    print(l)
-    if l[4] > l[5]:
-        l.insert(4, l[5])
-        del l[6]
-    else:
-        pass
-    print(l)
-    if l[3] > l[4]:
-        l.insert(3, l[4])
-        del l[5]
-    else:
-        pass
-    print(l)
-    if l[2] > l[3]:
-        l.insert(2, l[3])
-        del l[4]
-    else:
-        pass
-    print(l)
-    if l[1] > l[2]:
-        l.insert(1, l[2])
-        del l[3]
-    else:
-        pass
-    print(l)
-    if l[0] > l[1]:
-        l.insert(0, l[1])
-        del l[2]
-    else:
-        pass
-    print(l)
+    # Iterates through the list
+    for i in range(1, len(l)):
+        k = i
+        # If the index value that is being checked is less than its neighbour to the left, 
+        # and the index value is greater than the 0th, then swap them
+        while l[k] < l[k-1] and k > 0:
+            l[k], l[k-1] = l[k-1], l[k]
+            k -= 1
+
+
+    
+
+
 
 if __name__ == '__main__':
     if len(sys.argv) > 2:
