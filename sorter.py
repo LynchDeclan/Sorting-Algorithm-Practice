@@ -9,11 +9,15 @@ def main(algorithm, string_list):
         return
     if algorithm == "bubble":
         bubble_sort(unsorted_list)
+        print("This is the sorted list:")
+        print(unsorted_list)
     elif algorithm == "selection":
         selection_sort(unsorted_list)
+        print("This is the sorted list:")
         print(unsorted_list)
     elif algorithm == "insertion":
         insertion_sort(unsorted_list)
+        print("This is the sorted list:")
         print(unsorted_list)
     else:
         print(f"can't sort using {algorithm}")
@@ -27,9 +31,20 @@ def validate_list(l):
         return None
 
 
-def bubble_sort(l):
-    # your code here
-    print(l)
+def bubble_sort(unsorted_list):
+    list_sorted = False
+
+    while list_sorted == False:
+        print(unsorted_list)
+        list_sorted = True
+        for i in range(0, len(unsorted_list) - 1):
+            if unsorted_list[i] > unsorted_list[i + 1]:
+                list_sorted = False
+                temp = unsorted_list[i]
+                unsorted_list[i] = unsorted_list[i + 1]
+                unsorted_list[i + 1] = temp 
+    
+    return unsorted_list
 
 
 def selection_sort(l):
@@ -38,17 +53,17 @@ def selection_sort(l):
         for new_elm in range(min_val + 1, len(l)):
             if l[min_val] > l[new_elm]:
                 min_val = new_elm
-            l[first_elm], l[min_val] = l[min_val], l[first_elm] 
+        l[first_elm], l[min_val] = l[min_val], l[first_elm]
+        print(l) 
   
 
 def insertion_sort(l):
-    # Iterates through the list
+    # This is the part of the code that I (Declan) worked on
     for i in range(1, len(l)):
         k = i
-        # If the index value that is being checked is less than its neighbour to the left, 
-        # and the index value is greater than the 0th, then swap them
         while l[k] < l[k-1] and k > 0:
             l[k], l[k-1] = l[k-1], l[k]
+            print(l)
             k -= 1
 
 
