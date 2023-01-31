@@ -24,6 +24,7 @@ def bubble_sort(unsorted_list):
     list_sorted = False
 
     while list_sorted == False:
+        print(unsorted_list)
         list_sorted = True
         for i in range(0, len(unsorted_list) - 1):
             if unsorted_list[i] > unsorted_list[i + 1]:
